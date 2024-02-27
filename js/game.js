@@ -2,7 +2,7 @@ class Game {
   constructor() {
     this.startScreen = document.getElementById("start-screen");
     this.gameScreen = document.getElementById("game-screen");
-    //   this.gameEndScreen = document.getElementById("game-end");
+    this.gameEndScreen = document.getElementById("end-screen");
   }
 
   start() {
@@ -13,5 +13,17 @@ class Game {
 
     // Show the game screen
     this.gameScreen.style.display = "block";
+  }
+
+  restart() {
+    this.gameIsOver = false;
+
+    this.gameEndScreen.style.display("none");
+    this.gameScreen.style.display("block");
+
+    this.start();
+  }
+  gameOver() {
+    this.gameScreen.style.display = this.gameEndScreen;
   }
 }

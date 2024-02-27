@@ -19,9 +19,9 @@ const ballshipSprite = new Sprite(
   canvas.width / 0.3,
   canvas.height / 1.5,
   canvas.enemyProjectile,
-  50,
-  50,
-  60,
+  120,
+  120,
+  1000,
   1,
 
   [
@@ -66,8 +66,8 @@ const spinnerSprite = new Sprite(
   canvas.width / 0.3,
   canvas.height / 1.5,
   canvas.enemyProjectile,
-  20,
-  20,
+  80,
+  50,
   20,
   1,
   [
@@ -112,7 +112,7 @@ const cruiserSprite = new Sprite(
   canvas.width / 0.3,
   canvas.height / 0.5,
   canvas.enemyProjectile,
-  50,
+  100,
   50,
   20,
   1,
@@ -160,7 +160,7 @@ bgImage.src = "images/gameBG.png";
 
 let scrollSpeed = 70;
 let x = 0;
-
+let enemyArray = [ballshipSprite, spinnerSprite, cruiserSprite];
 function gameLoop() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   //screen
@@ -208,7 +208,6 @@ function gameLoop() {
   if (x <= -canvas.width) x = 0;
 
   //Enemy Array
-  let enemyArray = [ballshipSprite, spinnerSprite, cruiserSprite];
 
   enemyArray.forEach((enemy) => {
     projectileScheme.projectileRemove(enemy);
@@ -230,8 +229,8 @@ function gameLoop() {
     if (enemy.health <= 0) {
       const index = enemyArray.indexOf(enemy);
       enemyArray.splice(index, 1);
-    } else {
-      //enemy.enemyImage.draw(ctx);
+
+      enemy.delete(ctx);
     }
   });
 

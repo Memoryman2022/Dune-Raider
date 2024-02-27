@@ -36,4 +36,7 @@ export default class Sprite extends Enemy {
   draw(ctx, x, y, width, height) {
     ctx.drawImage(this.frames[this.currentFrame], x, y, width, height);
   }
+  // delete(ctx) {
+  //   ctx.drawImage("", "", "", "", "");
+  // }
 }

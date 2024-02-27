@@ -3,8 +3,8 @@ export default class Enemy {
     this.x = x;
     this.y = y;
     this.enemyProjectile = enemyProjectile;
-    this.width = 50;
-    this.height = 50;
+    this.width = width;
+    this.height = height;
     this.speed = speed;
     this.health = health;
     this.direction = Math.random() > 0.5 ? 1 : -1;
@@ -31,5 +31,9 @@ export default class Enemy {
 
   updatePosition(canvasWidth) {
     this.move(canvasWidth);
+  }
+
+  delete(ctx) {
+    ctx.clearRect(this.x + 10, this.y + 10, this.width, this.height);
   }
 }

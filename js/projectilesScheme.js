@@ -32,7 +32,7 @@ export default class ProjectilesScheme {
     return projectiles.x <= projectiles.length;
   }
 
-  projectileCollision(sprite) {
+  projectileRemove(sprite) {
     return this.projectilesArray.some((projectiles) => {
       if (projectiles.projectileCollision(sprite)) {
         this.projectilesArray.splice(

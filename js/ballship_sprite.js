@@ -1,7 +1,17 @@
 import Enemy from "./enemy.js";
 export default class Sprite extends Enemy {
-  constructor(x, y, framePaths, frameRate) {
-    super(x, y);
+  constructor(
+    x,
+    y,
+    enemyProjectile,
+    width,
+    height,
+    speed,
+    health,
+    framePaths,
+    frameRate
+  ) {
+    super(x, y, enemyProjectile, speed);
     this.frames = framePaths.map((path) => {
       let img = new Image();
       img.src = path;
@@ -12,7 +22,8 @@ export default class Sprite extends Enemy {
     this.lastFrameUpdate = Date.now();
   }
 
-  update() {
+  update(canvasWidth) {
+    super.updatePosition(canvasWidth);
     let now = Date.now();
     let elapsed = now - this.lastFrameUpdate;
 

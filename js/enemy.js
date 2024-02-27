@@ -7,6 +7,7 @@ export default class Enemy {
     this.height = 50;
     this.speed = speed;
     this.health = health;
+    this.direction = Math.random() > 0.5 ? 1 : -1;
   }
 
   draw(ctx) {
@@ -18,5 +19,17 @@ export default class Enemy {
   }
   enemyShoot() {}
 
-  move() {}
+  move(canvasWidth) {
+    if (this.x > canvasWidth - 400) {
+      this.x -= this.speed;
+    }
+    this.y += this.direction * (Math.random() * 2);
+    if (this.y <= 0 || this.y + this.height >= 700) {
+      this.direction *= -1;
+    }
+  }
+
+  updatePosition(canvasWidth) {
+    this.move(canvasWidth);
+  }
 }

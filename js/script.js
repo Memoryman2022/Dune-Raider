@@ -2,6 +2,7 @@ import Player from "./player.js";
 import ProjectilesScheme from "./projectilesScheme.js";
 import Enemy from "./enemy.js";
 import Sprite from "./ballship_sprite.js";
+import Projectiles from "./projectiles.js";
 const canvas = document.getElementById("game-canvas");
 const ctx = canvas.getContext("2d");
 
@@ -15,8 +16,14 @@ const player = new Player(
 //ballShip
 
 const ballshipSprite = new Sprite(
-  canvas.width / 0.4,
-  canvas.height / 2,
+  canvas.width / 0.3,
+  canvas.height / 1.5,
+  canvas.enemyProjectile,
+  50,
+  50,
+  20,
+  10,
+
   [
     "images/ballship.sprite/0000.png",
     "images/ballship.sprite/0001.png",
@@ -58,6 +65,11 @@ const ballshipSprite = new Sprite(
 const spinnerSprite = new Sprite(
   canvas.width / 0.3,
   canvas.height / 1.5,
+  canvas.enemyProjectile,
+  50,
+  50,
+  20,
+  10,
   [
     "images/spinner.sprite/0000.png",
     "images/spinner.sprite/0001.png",
@@ -99,6 +111,11 @@ const spinnerSprite = new Sprite(
 const cruiserSprite = new Sprite(
   canvas.width / 0.3,
   canvas.height / 0.5,
+  canvas.enemyProjectile,
+  50,
+  50,
+  20,
+  10,
   [
     "images/cruiser.sprite/0000.png",
     "images/cruiser.sprite/0001.png",
@@ -139,7 +156,7 @@ canvas.width = 1200;
 canvas.height = 800;
 
 let bgImage = new Image();
-bgImage.src = "images/Screenshot 2024-02-26 at 23.51.20.png";
+bgImage.src = "images/gameBG.png";
 
 let scrollSpeed = 70;
 let x = 0;
@@ -190,7 +207,18 @@ function gameLoop() {
   x -= scrollSpeed;
   if (x <= -canvas.width) x = 0;
 
-  //collision
+  projectileScheme.projectileRemove(ballshipSprite);
+  // const enemies = [new Enemy(ballshipSprite)];
+  // enemies.forEach((enemy) => {
+  //   if (projectileScheme.projectileCollision(enemy)) {
+  //     if (enemy.health <= 0) {
+  //       const index = enemies.indexOf(enemy);
+  //       enemies.splice(index, 1);
+  //     }
+  //   } else {
+  //     enemyImage.draw(ctx);
+  //   }
+  // });
 
   requestAnimationFrame(gameLoop);
 }

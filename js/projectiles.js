@@ -23,18 +23,16 @@ export default class Projectiles {
     this.x += this.speed;
   }
   projectileCollision(sprite) {
-    console.log(this.x < sprite.x + sprite.width);
-
     if (
-      this.x < sprite.x + sprite.width &&
-      this.x + this.width > sprite.x &&
-      this.y < sprite.y + sprite.height &&
-      this.y + this.height > sprite.y
+      this.x <= sprite.x + sprite.width &&
+      this.x + this.width >= sprite.x &&
+      this.y <= sprite.y + sprite.height &&
+      this.y + this.height >= sprite.y
     ) {
       console.log("inflict damage code execute");
-      //sprite.inflictDamage(this.damage);
-      //return true;
+      sprite.inflictDamage(this.damage);
+      return true;
     }
-    //return false;
+    return false;
   }
 }

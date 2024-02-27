@@ -1,0 +1,6 @@
+html contents body //div - game game-boarder //h1 dune Raiders // canvas - game
+screen //SCRIPTS //projectiles //projectilesScheme //enemy //spinner_sprite
+//cruiser_sprite //ballship_sprite //player //game (empty) //script //script
+imports - Player ProjectilesScheme Enemy Sprite // ProjectilesScheme imports
+Projectiles holds the array for the projectiles and the loading delay shoot
+mechanics delete projectiles mechanics collision mechanics

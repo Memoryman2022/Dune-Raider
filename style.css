@@ -1,0 +1,26 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  text-align: center;
+  height: 100vh;
+  background-image: url("images/Dune_Raider_Border.png");
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0% {
+    background-position: 1000px 0;
+  }
+  100% {
+    background-position: -1000px 0;
+  }
+}
+#game-canvas {
+  width: 1200px;
+  height: 800px;
+  background-image: url("images/gameBG.png");
+  background-repeat: repeat-x;
+  animation: slide 1s linear infinite;
+}

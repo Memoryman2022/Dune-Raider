@@ -21,8 +21,8 @@ const ballshipSprite = new Sprite(
   canvas.enemyProjectile,
   50,
   50,
-  20,
-  10,
+  60,
+  1,
 
   [
     "images/ballship.sprite/0000.png",
@@ -57,7 +57,7 @@ const ballshipSprite = new Sprite(
     "images/ballship.sprite/0029.png",
     "images/ballship.sprite/0030.png",
   ],
-  15
+  30
 );
 
 // spinner
@@ -66,10 +66,10 @@ const spinnerSprite = new Sprite(
   canvas.width / 0.3,
   canvas.height / 1.5,
   canvas.enemyProjectile,
-  50,
-  50,
   20,
-  10,
+  20,
+  20,
+  1,
   [
     "images/spinner.sprite/0000.png",
     "images/spinner.sprite/0001.png",
@@ -115,7 +115,7 @@ const cruiserSprite = new Sprite(
   50,
   50,
   20,
-  10,
+  1,
   [
     "images/cruiser.sprite/0000.png",
     "images/cruiser.sprite/0001.png",
@@ -149,7 +149,7 @@ const cruiserSprite = new Sprite(
     "images/cruiser.sprite/0029.png",
     "images/cruiser.sprite/0030.png",
   ],
-  20
+  30
 );
 
 canvas.width = 1200;
@@ -225,6 +225,15 @@ function gameLoop() {
   //     enemyImage.draw(ctx);
   //   }
   // });
+
+  enemyArray.forEach((enemy) => {
+    if (enemy.health <= 0) {
+      const index = enemyArray.indexOf(enemy);
+      enemyArray.splice(index, 1);
+    } else {
+      //enemy.enemyImage.draw(ctx);
+    }
+  });
 
   requestAnimationFrame(gameLoop);
 }

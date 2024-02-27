@@ -29,7 +29,6 @@ export default class Projectiles {
       this.y <= sprite.y + sprite.height &&
       this.y + this.height >= sprite.y
     ) {
-      console.log("inflict damage code execute");
       sprite.inflictDamage(this.damage);
       return true;
     }

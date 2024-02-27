@@ -11,7 +11,7 @@ export default class Sprite extends Enemy {
     framePaths,
     frameRate
   ) {
-    super(x, y, enemyProjectile, speed);
+    super(x, y, enemyProjectile, width, height, speed, health);
     this.frames = framePaths.map((path) => {
       let img = new Image();
       img.src = path;

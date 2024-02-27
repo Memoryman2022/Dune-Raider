@@ -25,10 +25,10 @@ export default class Player {
   shoot() {
     if (this.fire) {
       const projectileOriginX = this.x + this.width;
-      const projectileOriginY = this.y + this.height / 2;
+      const projectileOriginY = this.y + this.height / 5;
       const speed = 20;
       const delay = 10;
-      let damage = [];
+      let damage = 1;
       this.projectileScheme.shoot(
         projectileOriginX,
         projectileOriginY,

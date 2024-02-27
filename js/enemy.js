@@ -1,5 +1,5 @@
 export default class Enemy {
-  constructor(x, y, enemyProjectile, width, height, speed, health) {
+  constructor(x, y, enemyProjectile, width, height, speed, health, direction) {
     this.x = x;
     this.y = y;
     this.enemyProjectile = enemyProjectile;

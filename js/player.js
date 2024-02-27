@@ -1,3 +1,7 @@
+let lazer = new Audio("sounds/laser2.wav");
+lazer.volume = 0.5;
+let hover = new Audio("sounds/hovermobile_sfx_.wav");
+hover.volume = 0.2;
 export default class Player {
   constructor(x, y, projectileScheme) {
     this.x = x;
@@ -15,6 +19,7 @@ export default class Player {
   }
 
   draw(ctx) {
+    hover.play();
     ctx.drawImage(this.playerImage, this.x, this.y, this.width, this.height);
 
     this.move();
@@ -29,6 +34,7 @@ export default class Player {
       const speed = 20;
       const delay = 10;
       let damage = 1;
+      lazer.play();
       this.projectileScheme.shoot(
         projectileOriginX,
         projectileOriginY,

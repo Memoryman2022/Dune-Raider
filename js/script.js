@@ -207,7 +207,13 @@ function gameLoop() {
   x -= scrollSpeed;
   if (x <= -canvas.width) x = 0;
 
-  projectileScheme.projectileRemove(ballshipSprite);
+  //Enemy Array
+  let enemyArray = [ballshipSprite, spinnerSprite, cruiserSprite];
+
+  enemyArray.forEach((enemy) => {
+    projectileScheme.projectileRemove(enemy);
+  });
+
   // const enemies = [new Enemy(ballshipSprite)];
   // enemies.forEach((enemy) => {
   //   if (projectileScheme.projectileCollision(enemy)) {

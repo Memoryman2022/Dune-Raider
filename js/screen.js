@@ -1,3 +1,5 @@
+import Game from "./game.js";
+
 window.onload = function () {
   const startButton = document.getElementById("start-button");
   const restartButton = document.getElementById("restart-button");
@@ -5,14 +7,12 @@ window.onload = function () {
   const game = new Game();
 
   startButton.addEventListener("click", function () {
-    startGame();
+    game.startGame();
   });
-  restartButton.addEventListener("click", () => {
-    startGame();
+  restartButton.addEventListener("click", function () {
+    game.startGame();
   });
-  function startGame() {
-    game.start();
-  }
+
   // function stopGame() {
   //   game.stop();
   // }

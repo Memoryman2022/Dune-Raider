@@ -19,11 +19,8 @@ export default class Player {
   }
 
   draw(ctx) {
-    // hover.play();
     ctx.drawImage(this.playerImage, this.x, this.y, this.width, this.height);
-
     this.move();
-
     this.shoot();
   }
 
@@ -34,7 +31,6 @@ export default class Player {
       const speed = 20;
       const delay = 10;
       let damage = 1;
-      // lazer.play();
       this.projectileScheme.shoot(
         projectileOriginX,
         projectileOriginY,

@@ -3,6 +3,9 @@ import ProjectilesScheme from "./projectilesScheme.js";
 import Enemy from "./enemy.js";
 import Sprite from "./ballship_sprite.js";
 import Projectiles from "./projectiles.js";
+import BallshipSprite from "./ballship_sprite.js";
+import SpinnerSprite from "./spinner_sprite.js";
+import CruiserSprite from "./cruiser_sprite.js";
 const canvas = document.getElementById("game-canvas");
 const ctx = canvas.getContext("2d");
 
@@ -15,7 +18,7 @@ const player = new Player(
 
 //ballShip
 
-const ballshipSprite = new Sprite(
+const ballshipSprite = new BallshipSprite(
   canvas.width / 0.3,
   canvas.height / 1.5,
   canvas.enemyProjectile,
@@ -62,7 +65,7 @@ const ballshipSprite = new Sprite(
 
 // spinner
 
-const spinnerSprite = new Sprite(
+const spinnerSprite = new SpinnerSprite(
   canvas.width / 0.3,
   canvas.height / 1.5,
   canvas.enemyProjectile,
@@ -108,7 +111,7 @@ const spinnerSprite = new Sprite(
 
 // cruiser
 
-const cruiserSprite = new Sprite(
+const cruiserSprite = new CruiserSprite(
   canvas.width / 0.3,
   canvas.height / 0.5,
   canvas.enemyProjectile,
@@ -160,7 +163,8 @@ bgImage.src = "images/gameBG.png";
 
 let scrollSpeed = 70;
 let x = 0;
-let enemyArray = [ballshipSprite, spinnerSprite, cruiserSprite];
+let enemyArray = [spinnerSprite, ballshipSprite, cruiserSprite];
+
 function gameLoop() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   //screen
@@ -171,38 +175,75 @@ function gameLoop() {
   projectileScheme.draw(ctx);
   player.draw(ctx);
 
-  ballshipSprite.update();
-  let ballshipSpriteWidth = 150;
-  let ballshipSpriteHeight = 150;
-  ballshipSprite.draw(
-    ctx,
-    ballshipSprite.x,
-    ballshipSprite.y,
-    ballshipSpriteWidth,
-    ballshipSpriteHeight
-  );
+  enemyArray.forEach((enemy) => {
+    if (enemy instanceof CruiserSprite) {
+      let cruiserSpriteWidth = 150;
+      let cruiserSpriteHeight = 100;
+      enemy.update();
 
-  spinnerSprite.update();
-  let spinnerSpriteWidth = 100;
-  let spinnerSpriteHeight = 100;
-  spinnerSprite.draw(
-    ctx,
-    spinnerSprite.x,
-    spinnerSprite.y,
-    spinnerSpriteWidth,
-    spinnerSpriteHeight
-  );
+      enemy.draw(
+        ctx,
+        enemy.x,
+        enemy.y,
+        cruiserSpriteWidth,
+        cruiserSpriteHeight
+      );
+    }
 
-  cruiserSprite.update();
-  let cruiserSpriteWidth = 150;
-  let cruiserSpriteHeight = 100;
-  cruiserSprite.draw(
-    ctx,
-    cruiserSprite.x,
-    cruiserSprite.y,
-    cruiserSpriteWidth,
-    cruiserSpriteHeight
-  );
+    if (enemy instanceof SpinnerSprite) {
+      let spinnerSpriteWidth = 100;
+      let spinnerSpriteHeight = 100;
+      enemy.update();
+      enemy.draw(
+        ctx,
+        enemy.x,
+        enemy.y,
+        spinnerSpriteWidth,
+        spinnerSpriteHeight
+      );
+    }
+
+    if (enemy instanceof BallshipSprite) {
+      let ballshipSpriteWidth = 150;
+      let ballshipSpriteHeight = 150;
+      enemy.update();
+      enemy.draw(
+        ctx,
+        enemy.x,
+        enemy.y,
+        ballshipSpriteWidth,
+        ballshipSpriteHeight
+      );
+    }
+  });
+
+  // ballshipSprite.draw(
+  //   ctx,
+  //   ballshipSprite.x,
+  //   ballshipSprite.y,
+  //   ballshipSpriteWidth,
+  //   ballshipSpriteHeight
+  // );
+
+  // spinnerSprite.update();
+
+  // spinnerSprite.draw(
+  //   ctx,
+  //   spinnerSprite.x,
+  //   spinnerSprite.y,
+  //   spinnerSpriteWidth,
+  //   spinnerSpriteHeight
+  // );
+
+  // cruiserSprite.update();
+
+  // cruiserSprite.draw(
+  //   ctx,
+  //   cruiserSprite.x,
+  //   cruiserSprite.y,
+  //   cruiserSpriteWidth,
+  //   cruiserSpriteHeight
+  // );
 
   x -= scrollSpeed;
   if (x <= -canvas.width) x = 0;

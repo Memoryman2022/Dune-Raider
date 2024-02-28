@@ -1,5 +1,5 @@
 import Enemy from "./enemy.js";
-export default class Sprite extends Enemy {
+export default class SpinnerSprite extends Enemy {
   constructor(
     x,
     y,
@@ -11,7 +11,7 @@ export default class Sprite extends Enemy {
     framePaths,
     frameRate
   ) {
-    super(x, y);
+    super(x, y, enemyProjectile, width, height, speed, health);
     this.frames = framePaths.map((path) => {
       let img = new Image();
       img.src = path;

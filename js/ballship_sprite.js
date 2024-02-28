@@ -1,5 +1,5 @@
 import Enemy from "./enemy.js";
-export default class Sprite extends Enemy {
+export default class BallshipSprite extends Enemy {
   constructor(
     x,
     y,

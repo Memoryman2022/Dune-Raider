@@ -23,6 +23,7 @@ class Game {
 
     this.start();
   }
+
   gameOver() {
     this.gameScreen.style.display = this.gameEndScreen;
   }

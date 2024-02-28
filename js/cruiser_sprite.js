@@ -22,7 +22,8 @@ export default class CruiserSprite extends Enemy {
     this.lastFrameUpdate = Date.now();
   }
 
-  update() {
+  update(canvasWidth) {
+    super.updatePosition(canvasWidth);
     let now = Date.now();
     let elapsed = now - this.lastFrameUpdate;
 

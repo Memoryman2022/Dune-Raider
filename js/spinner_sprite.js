@@ -22,7 +22,19 @@ export default class SpinnerSprite extends Enemy {
     this.lastFrameUpdate = Date.now();
   }
 
-  update() {
+  // overwrighting the move from parent
+  move(canvasWidth) {
+    if (this.x > canvasWidth - 400) {
+      this.x -= this.speed;
+    }
+    this.x += this.direction * (Math.random() * 2);
+    if (this.y <= 0 || this.y + this.height >= 700) {
+      this.direction *= -1;
+    }
+  }
+
+  update(canvasWidth) {
+    super.updatePosition(canvasWidth);
     let now = Date.now();
     let elapsed = now - this.lastFrameUpdate;
 

@@ -8,10 +8,12 @@ window.onload = function () {
     startGame();
   });
   restartButton.addEventListener("click", () => {
-    game.gameEndScreen.style.display = "none";
-    game.gameScreen.style.display = "block";
+    startGame();
   });
   function startGame() {
     game.start();
   }
+  // function stopGame() {
+  //   game.stop();
+  // }
 };

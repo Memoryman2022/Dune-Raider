@@ -1,13 +1,11 @@
 import Player from "./player.js";
 import ProjectilesScheme from "./projectilesScheme.js";
-import Enemy from "./enemy.js";
-import Sprite from "./ballship_sprite.js";
-import Projectiles from "./projectiles.js";
 import BallshipSprite from "./ballship_sprite.js";
 import SpinnerSprite from "./spinner_sprite.js";
 import CruiserSprite from "./cruiser_sprite.js";
-const canvas = document.getElementById("game-canvas");
+let canvas = document.getElementById("game-canvas");
 const ctx = canvas.getContext("2d");
+const gameEndScreen = document.getElementById("end-screen");
 
 const projectileScheme = new ProjectilesScheme(canvas);
 const player = new Player(
@@ -15,8 +13,6 @@ const player = new Player(
   canvas.height / 0.3,
   projectileScheme
 );
-
-//ballShip
 
 const ballshipSprite = new BallshipSprite(
   canvas.width / 0.3,
@@ -180,7 +176,6 @@ function gameLoop() {
       let cruiserSpriteWidth = 150;
       let cruiserSpriteHeight = 100;
       enemy.update();
-
       enemy.draw(
         ctx,
         enemy.x,
@@ -217,38 +212,8 @@ function gameLoop() {
     }
   });
 
-  // ballshipSprite.draw(
-  //   ctx,
-  //   ballshipSprite.x,
-  //   ballshipSprite.y,
-  //   ballshipSpriteWidth,
-  //   ballshipSpriteHeight
-  // );
-
-  // spinnerSprite.update();
-
-  // spinnerSprite.draw(
-  //   ctx,
-  //   spinnerSprite.x,
-  //   spinnerSprite.y,
-  //   spinnerSpriteWidth,
-  //   spinnerSpriteHeight
-  // );
-
-  // cruiserSprite.update();
-
-  // cruiserSprite.draw(
-  //   ctx,
-  //   cruiserSprite.x,
-  //   cruiserSprite.y,
-  //   cruiserSpriteWidth,
-  //   cruiserSpriteHeight
-  // );
-
   x -= scrollSpeed;
   if (x <= -canvas.width) x = 0;
-
-  //Enemy Array
 
   enemyArray.forEach((enemy) => {
     projectileScheme.projectileRemove(enemy);
@@ -274,6 +239,10 @@ function gameLoop() {
       enemy.delete(ctx);
     }
   });
+
+  if (enemyArray.length === 0) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
 
   requestAnimationFrame(gameLoop);
 }

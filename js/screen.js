@@ -2,19 +2,15 @@ window.onload = function () {
   const startButton = document.getElementById("start-button");
   const restartButton = document.getElementById("restart-button");
 
-  const game = new Game();
+  const startScreen = document.getElementById("start-screen");
+  const gameEndScreen = document.getElementById("end-screen");
+
+  const game = new Game(startScreen, gameEndScreen);
 
   startButton.addEventListener("click", function () {
-    startGame();
+    game.start();
   });
   restartButton.addEventListener("click", function () {
-    console.log("restart game");
     game.restart();
   });
-  function startGame() {
-    game.start();
-  }
-  // function stopGame() {
-  //   game.stop();
-  // }
 };

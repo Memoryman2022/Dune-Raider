@@ -41,6 +41,11 @@ body {
   background-repeat: repeat-x;
   animation: slide 1s linear infinite;
 }
+
+#end-screen {
+  display: none;
+}
+
 @keyframes slide {
   0% {
     background-position: 1000px 0;
@@ -48,8 +53,4 @@ body {
   100% {
     background-position: -1000px 0;
   }
-}
-
-#end-screen {
-  display: none;
 }

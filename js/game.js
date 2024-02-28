@@ -18,13 +18,13 @@ class Game {
   restart() {
     this.gameIsOver = false;
 
-    this.gameEndScreen.style.display("none");
-    this.gameScreen.style.display("block");
+    this.gameEndScreen.style.display = "none";
+    this.gameScreen.style.display = "block";
 
     this.start();
   }
 
-  gameOver() {
-    this.gameScreen.style.display = this.gameEndScreen;
-  }
+  // gameOver() {
+  //   this.gameScreen.style.display = this.gameEndScreen;
+  // }
 }

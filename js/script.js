@@ -6,6 +6,7 @@ import CruiserSprite from "./cruiser_sprite.js";
 let canvas = document.getElementById("game-canvas");
 const ctx = canvas.getContext("2d");
 const gameEndScreen = document.getElementById("end-screen");
+const gameScreen = document.getElementById("game-screen");
 
 const projectileScheme = new ProjectilesScheme(canvas);
 const player = new Player(
@@ -241,7 +242,8 @@ function gameLoop() {
   });
 
   if (enemyArray.length === 0) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    gameScreen.style.display = "none";
+    gameEndScreen.style.display = "block";
   }
 
   requestAnimationFrame(gameLoop);

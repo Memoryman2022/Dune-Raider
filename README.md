@@ -6,7 +6,7 @@ You must protect his heir Paul Artriedes and secure the future of his noble hous
 Take the Raider and deliver Paul and the lady Jessica to the safty of Stich T'bar deep in the desert where enemy forces can not follow.
 You will have to fight your way through enemy ships hell bent on eliminating your precious cargo.
 
-May Shihulud keep you!
+May Shai-hulud keep you!
 
 Now GO!!!!!!
 

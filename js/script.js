@@ -14,6 +14,7 @@ const player = new Player(
   canvas.height / 0.3,
   projectileScheme
 );
+let playerCollided = false;
 
 const ballshipSprite = new BallshipSprite(
   canvas.width / 0.3,
@@ -21,8 +22,8 @@ const ballshipSprite = new BallshipSprite(
   canvas.enemyProjectile,
   120,
   120,
-  1000,
   1,
+  5,
 
   [
     "images/ballship.sprite/0000.png",
@@ -68,7 +69,7 @@ const spinnerSprite = new SpinnerSprite(
   canvas.enemyProjectile,
   80,
   50,
-  20,
+  1,
   1,
   [
     "images/spinner.sprite/0000.png",
@@ -110,12 +111,12 @@ const spinnerSprite = new SpinnerSprite(
 
 const cruiserSprite = new CruiserSprite(
   canvas.width / 0.3,
-  canvas.height / 0.5,
+  canvas.height / 0.4,
   canvas.enemyProjectile,
+  150,
   100,
-  50,
-  20,
   1,
+  4,
   [
     "images/cruiser.sprite/0000.png",
     "images/cruiser.sprite/0001.png",
@@ -162,6 +163,21 @@ let scrollSpeed = 70;
 let x = 0;
 let enemyArray = [spinnerSprite, ballshipSprite, cruiserSprite];
 
+function collision(obj1, obj2) {
+  return (
+    obj1.x < obj2.x + obj2.width &&
+    obj1.x + obj1.width > obj2.x &&
+    obj1.y < obj2.y + obj2.height &&
+    obj1.y + obj1.height > obj2.y
+  );
+}
+
+function endScreen() {
+  setTimeout(() => {
+    gameScreen.style.display = "none";
+    gameEndScreen.style.display = "block";
+  }, 2000);
+}
 function gameLoop() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   //screen
@@ -170,7 +186,9 @@ function gameLoop() {
 
   //game elements
   projectileScheme.draw(ctx);
-  player.draw(ctx);
+  if (!playerCollided) {
+    player.draw(ctx);
+  }
 
   enemyArray.forEach((enemy) => {
     if (enemy instanceof CruiserSprite) {
@@ -216,21 +234,19 @@ function gameLoop() {
   x -= scrollSpeed;
   if (x <= -canvas.width) x = 0;
 
+  enemyArray.forEach((enemy, index) => {
+    if (collision(player, enemy) && !playerCollided) {
+      console.log("Collision!!!", index);
+      playerCollided = true;
+      enemyArray.splice(index, 1);
+
+      endScreen();
+    }
+  });
+
   enemyArray.forEach((enemy) => {
     projectileScheme.projectileRemove(enemy);
   });
-
-  // const enemies = [new Enemy(ballshipSprite)];
-  // enemies.forEach((enemy) => {
-  //   if (projectileScheme.projectileCollision(enemy)) {
-  //     if (enemy.health <= 0) {
-  //       const index = enemies.indexOf(enemy);
-  //       enemies.splice(index, 1);
-  //     }
-  //   } else {
-  //     enemyImage.draw(ctx);
-  //   }
-  // });
 
   enemyArray.forEach((enemy) => {
     if (enemy.health <= 0) {
@@ -239,6 +255,12 @@ function gameLoop() {
 
       enemy.delete(ctx);
     }
+  });
+  enemyArray.forEach((enemy) => {
+    enemy.updatePosition(canvas.width);
+  });
+  enemyArray = enemyArray.filter((enemy) => {
+    return enemy.y < canvas.height && enemy.y + enemy.height > 0;
   });
 
   if (enemyArray.length === 0) {

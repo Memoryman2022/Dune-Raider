@@ -5,12 +5,12 @@ window.onload = function () {
   const startScreen = document.getElementById("start-screen");
   const gameEndScreen = document.getElementById("end-screen");
 
-  const game = new Game(startScreen, gameEndScreen);
-
   startButton.addEventListener("click", function () {
+    const game = new Game(startScreen, gameEndScreen);
     game.start();
   });
   restartButton.addEventListener("click", function () {
+    const game = new Game(startScreen, gameEndScreen);
     game.restart();
   });
 };

@@ -18,10 +18,11 @@ const player = new Player(
   projectileScheme
 );
 let playerCollided = false;
-
+let lastSpawnTime = Date.now();
+const spawnInterval = 5000;
 const ballshipSprite = new BallshipSprite(
-  canvas.width + 1200,
-  canvas.height / 1.5,
+  canvas.width + 1700,
+  Math.random() * canvas.height * 3,
   canvas.enemyProjectile,
   120,
   120,
@@ -68,11 +69,11 @@ const ballshipSprite = new BallshipSprite(
 
 const spinnerSprite = new SpinnerSprite(
   canvas.width + 1300,
-  canvas.height / 1.5,
+  Math.random() * canvas.height * 4,
   canvas.enemyProjectile,
   80,
   50,
-  1,
+  4,
   1,
   [
     "images/spinner.sprite/0000.png",
@@ -114,7 +115,7 @@ const spinnerSprite = new SpinnerSprite(
 
 const cruiserSprite = new CruiserSprite(
   canvas.width + 1300,
-  canvas.height / 0.4,
+  Math.random() * canvas.height * 5,
   canvas.enemyProjectile,
   150,
   100,
@@ -198,6 +199,68 @@ function gameLoop() {
   projectileScheme.draw(ctx);
   if (!playerCollided) {
     player.draw(ctx);
+  }
+  const currentTime = Date.now();
+  if (currentTime - lastSpawnTime > spawnInterval) {
+    spawnEnemy();
+    lastSpawnTime = currentTime;
+  }
+
+  function spawnEnemy() {
+    const enemyType = Math.floor(Math.random() * 3); // Randomly choose between 0, 1, or 2
+    let enemy;
+
+    const xPosition = canvas.width + Math.random() * 100; // Start off-screen to the right
+    const yPosition = Math.random() * canvas.height;
+
+    switch (enemyType) {
+      case 0:
+        enemy = new BallshipSprite(
+          xPosition,
+          yPosition,
+          canvas.enemyProjectile,
+          120,
+          120,
+          1,
+          5,
+          ["images/ballship.gif"],
+          30
+        );
+        break;
+      case 1:
+        enemy = new SpinnerSprite(
+          xPosition,
+          yPosition,
+          canvas.enemyProjectile,
+          80,
+          50,
+          4,
+          1,
+          ["path/to/image.png"],
+          80
+        );
+        break;
+      case 2:
+        enemy = new CruiserSprite(
+          xPosition,
+          yPosition,
+          canvas.enemyProjectile,
+          150,
+          100,
+          1,
+          4,
+          ["path/to/image.png"],
+          30
+        );
+        break;
+      default:
+        console.log("Unknown enemy type");
+        break;
+    }
+
+    if (enemy) {
+      enemyArray.push(enemy);
+    }
   }
 
   enemyArray.forEach((enemy) => {

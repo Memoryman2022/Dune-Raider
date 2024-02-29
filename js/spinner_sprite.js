@@ -21,9 +21,9 @@ export default class SpinnerSprite extends Enemy {
     this.currentFrame = 0;
     this.frameRate = frameRate;
     this.lastFrameUpdate = Date.now();
-    this.amplitude = 50; // Height of the wave
-    this.angle = 0; // Start angle at 0
-    this.angleVelocity = 0.08; // Speed of the wave
+    this.amplitude = 60;
+    this.angle = 0;
+    this.angleVelocity = 0.08;
     this.initialY = randomY;
   }
 

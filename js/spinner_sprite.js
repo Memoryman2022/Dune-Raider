@@ -11,7 +11,7 @@ export default class SpinnerSprite extends Enemy {
     framePaths,
     frameRate
   ) {
-    const randomY = Math.random() * 800;
+    const randomY = Math.random() * 700;
     super(x, randomY, enemyProjectile, width, height, speed, health);
     this.frames = framePaths.map((path) => {
       let img = new Image();
@@ -21,7 +21,10 @@ export default class SpinnerSprite extends Enemy {
     this.currentFrame = 0;
     this.frameRate = frameRate;
     this.lastFrameUpdate = Date.now();
-    this.ySpeed = Math.random() * 4 - 2;
+    this.amplitude = 50; // Height of the wave
+    this.angle = 0; // Start angle at 0
+    this.angleVelocity = 0.08; // Speed of the wave
+    this.initialY = randomY;
   }
 
   // overwrighting the move from parent
@@ -35,7 +38,9 @@ export default class SpinnerSprite extends Enemy {
     // }
 
     this.x -= this.speed;
-    this.y += this.ySpeed;
+    // this.y += this.ySpeed;
+    this.angle += this.angleVelocity;
+    this.y = this.initialY + Math.sin(this.angle) * this.amplitude;
   }
 
   update(canvasWidth) {

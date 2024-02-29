@@ -20,7 +20,7 @@ const player = new Player(
 let playerCollided = false;
 
 const ballshipSprite = new BallshipSprite(
-  canvas.width / 0.3,
+  canvas.width + 1200,
   canvas.height / 1.5,
   canvas.enemyProjectile,
   120,
@@ -67,7 +67,7 @@ const ballshipSprite = new BallshipSprite(
 // spinner
 
 const spinnerSprite = new SpinnerSprite(
-  canvas.width / 0.3,
+  canvas.width + 1300,
   canvas.height / 1.5,
   canvas.enemyProjectile,
   80,
@@ -113,7 +113,7 @@ const spinnerSprite = new SpinnerSprite(
 // cruiser
 
 const cruiserSprite = new CruiserSprite(
-  canvas.width / 0.3,
+  canvas.width + 1300,
   canvas.height / 0.4,
   canvas.enemyProjectile,
   150,

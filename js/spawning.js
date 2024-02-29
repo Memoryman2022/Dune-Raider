@@ -1,6 +1,6 @@
 class EnemySpawner {
   constructor(spawnFunction) {
-    this.spawnFunction = spawnFunction; // The function that adds an enemy to the game
+    this.spawnFunction = spawnFunction;
     this.isSpawning = false;
   }
 
@@ -19,21 +19,17 @@ class EnemySpawner {
     const nextSpawnDelay = this.getRandomSpawnDelay();
 
     setTimeout(() => {
-      this.spawnFunction(); // Call the function to spawn an enemy
-      this.scheduleNextSpawn(); // Schedule the next spawn
+      this.spawnFunction();
+      this.scheduleNextSpawn();
     }, nextSpawnDelay);
   }
 
   getRandomSpawnDelay() {
-    // Return a random delay in milliseconds
-    // For example, between 1 and 5 seconds
     return Math.random() * 4000 + 1000;
   }
 }
 
-function spawnEnemy() {
-  // Logic to instantiate and add an enemy to the game
-}
+function spawnEnemy() {}
 
 const spawner = new EnemySpawner(spawnEnemy);
 spawner.startSpawning();

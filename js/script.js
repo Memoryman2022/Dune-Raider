@@ -107,10 +107,10 @@ function gameLoop() {
   }
 
   function spawnEnemy() {
-    const enemyType = Math.floor(Math.random() * 3); // Randomly choose between 0, 1, or 2
+    const enemyType = Math.floor(Math.random() * 3);
     let enemy;
 
-    const xPosition = canvas.width + Math.random() * 100; // Start off-screen to the right
+    const xPosition = canvas.width + Math.random() * 100;
     const yPosition = Math.random() * canvas.height;
 
     switch (enemyType) {

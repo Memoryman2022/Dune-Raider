@@ -1,8 +1,11 @@
 import Player from "./player.js";
 import ProjectilesScheme from "./projectilesScheme.js";
+import Projectiles from "./projectiles.js";
 import BallshipSprite from "./ballship_sprite.js";
 import SpinnerSprite from "./spinner_sprite.js";
 import CruiserSprite from "./cruiser_sprite.js";
+import Explosion from "./explosion.js";
+import Hits from "./hits.js";
 let canvas = document.getElementById("game-canvas");
 const ctx = canvas.getContext("2d");
 const gameEndScreen = document.getElementById("end-screen");
@@ -172,6 +175,13 @@ function collision(obj1, obj2) {
   );
 }
 
+let explosions = [];
+const EXPLOSION_FRAME_WIDTH = 64;
+const EXPLOSION_FRAME_HEIGHT = 64;
+let hits = [];
+const HIT_FRAME_WIDTH = 32;
+const HIT_FRAME_HEIGHT = 32;
+
 function endScreen() {
   setTimeout(() => {
     gameScreen.style.display = "none";
@@ -238,10 +248,38 @@ function gameLoop() {
     if (collision(player, enemy) && !playerCollided) {
       console.log("Collision!!!", index);
       playerCollided = true;
+
+      let explosionX = enemy.x + enemy.width / 2 - EXPLOSION_FRAME_WIDTH / 2;
+      let explosionY = enemy.y + enemy.height / 2 - EXPLOSION_FRAME_HEIGHT / 2;
+
+      explosions.push(
+        new Explosion(
+          explosionX,
+          explosionY,
+          EXPLOSION_FRAME_WIDTH,
+          EXPLOSION_FRAME_HEIGHT,
+          16,
+          "images/exp2_0.png"
+        )
+      );
+
       enemyArray.splice(index, 1);
 
-      endScreen();
+      setTimeout(() => {
+        gameScreen.style.display = "none";
+        gameEndScreen.style.display = "block";
+      }, 2000);
+
+      // endScreen();
     }
+  });
+
+  explosions.forEach((explosion) => {
+    explosion.update();
+  });
+
+  explosions.forEach((explosion) => {
+    explosion.draw(ctx);
   });
 
   enemyArray.forEach((enemy) => {
@@ -251,6 +289,21 @@ function gameLoop() {
   enemyArray.forEach((enemy) => {
     if (enemy.health <= 0) {
       const index = enemyArray.indexOf(enemy);
+
+      let explosionX = enemy.x + enemy.width / 2 - EXPLOSION_FRAME_WIDTH / 2;
+      let explosionY = enemy.y + enemy.height / 2 - EXPLOSION_FRAME_HEIGHT / 2;
+
+      explosions.push(
+        new Explosion(
+          explosionX,
+          explosionY,
+          EXPLOSION_FRAME_WIDTH,
+          EXPLOSION_FRAME_HEIGHT,
+          16,
+          "images/exp2_0.png"
+        )
+      );
+
       enemyArray.splice(index, 1);
 
       enemy.delete(ctx);
@@ -263,9 +316,16 @@ function gameLoop() {
     return enemy.y < canvas.height && enemy.y + enemy.height > 0;
   });
 
+  // if (enemyArray.length === 0) {
+  //   gameScreen.style.display = "none";
+  //   gameEndScreen.style.display = "block";
+  // }
+
   if (enemyArray.length === 0) {
-    gameScreen.style.display = "none";
-    gameEndScreen.style.display = "block";
+    setTimeout(() => {
+      gameScreen.style.display = "none";
+      gameEndScreen.style.display = "block";
+    }, 2000);
   }
 
   requestAnimationFrame(gameLoop);

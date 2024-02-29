@@ -34,7 +34,7 @@ export default class Player {
       const speed = 20;
       const delay = 10;
       let damage = 1;
-      // lazer.play();
+      lazer.play();
       this.projectileScheme.shoot(
         projectileOriginX,
         projectileOriginY,

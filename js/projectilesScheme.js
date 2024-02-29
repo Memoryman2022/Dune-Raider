@@ -44,4 +44,32 @@ export default class ProjectilesScheme {
       return false;
     });
   }
+
+  // draw(ctx) {
+  //   this.projectilesArray = this.projectilesArray.filter((projectile) => {
+  //     if (!this.offScreenProjectiles(projectile)) {
+  //       projectile.draw(ctx);
+  //       return true;
+  //     }
+  //     return false;
+  //   });
+  // }
+
+  // offScreenProjectiles(projectile) {
+  //   return (
+  //     projectile.x > this.canvas.width ||
+  //     projectile.y > this.canvas.height ||
+  //     projectile.y < 0
+  //   );
+  // }
+
+  // projectileRemove(sprite) {
+  //   this.projectilesArray = this.projectilesArray.filter((projectile) => {
+  //     if (!projectile.projectileCollision(sprite)) {
+  //       return true;
+  //     }
+
+  //     return false;
+  //   });
+  // }
 }

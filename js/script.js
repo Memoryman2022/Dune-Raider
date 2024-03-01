@@ -21,8 +21,14 @@ const player = new Player(
   projectileScheme
 );
 let playerCollided = false;
+
+//spawn
 let lastSpawnTime = Date.now();
-const spawnInterval = 5000;
+function getRandomSpawnInterval(min, max) {
+  return Math.random() * (max - min) + min;
+}
+let spawnInterval = getRandomSpawnInterval(200, 400);
+
 const ballshipSprite = new BallshipSprite(
   canvas.width + 1700,
   Math.random() * canvas.height * 3,
@@ -108,10 +114,13 @@ function gameLoop() {
   if (!playerCollided) {
     player.draw(ctx);
   }
+
+  //spawning
   const currentTime = Date.now();
   if (currentTime - lastSpawnTime > spawnInterval) {
     spawnEnemy();
     lastSpawnTime = currentTime;
+    spawnInterval = getRandomSpawnInterval(500, 1000);
   }
 
   function spawnEnemy() {

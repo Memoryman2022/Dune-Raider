@@ -91,6 +91,9 @@ body {
   color: rgb(249, 5, 5);
   font-size: 800%;
 }
+h3 {
+  color: aqua;
+}
 
 #restart-button {
   position: absolute;

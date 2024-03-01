@@ -1,4 +1,4 @@
-DUNE RAIDER
+<img src="/Users/metaman/Desktop/GAME/last working repo/Dune-Raider/images/title.png" alt="alt text" width="150" height="100">
 
 The palace has fallen! Arrakeen is in flames! Harkonnen and Sardaukar forces have swarmed Arakis and the Duke is in chains. 
 

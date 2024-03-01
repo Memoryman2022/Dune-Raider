@@ -1,4 +1,4 @@
-<img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/title.png" alt="alt text" width="150" height="100">
+<img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/title.png" alt="alt text" width="350" height="350">
 
 The palace has fallen! Arrakeen is in flames! Harkonnen and Sardaukar forces have swarmed Arakis and the Duke is in chains. 
 

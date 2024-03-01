@@ -2,7 +2,7 @@
 
 [Dune Raider Theme](https://github.com/Memoryman2022/Dune-Raider/blob/main/sounds2/dune_raider.mp3)
 
-<span style="font-size:20px;">"The palace has fallen! Arrakeen is in flames! Harkonnen and Sardaukar forces have swarmed Arakis and the Duke is in chains.
+<span style="font-size:20px;">"The palace has fallen! Arrakeen is in flames! Harkonnen and Sardaukar forces have swarmed Arakis and the Duke is in chains.</span>
 
 You must protect his heir Paul Artriedes and secure the future of his noble house.
 Take the Raider and deliver Paul and the lady Jessica to the safty of Stich T'bar deep in the desert where enemy forces can not follow.

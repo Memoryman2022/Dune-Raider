@@ -11,4 +11,8 @@ May Shai-hulud keep you!
 Now GO!!!!!!
 
 
-Dune Raider is a scrolling platform single POV shooter. 
+Dune Raider is a scrolling platform shooter. 
+
+The Raider is equiped with hover technology for fluid maneuverability and a front facing lazer cannon array
+
+<img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/ezgif.com-speed.gif" alt="Dune Raider Image" width="300" height="300">

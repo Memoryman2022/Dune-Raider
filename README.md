@@ -2,7 +2,7 @@
 
 [Dune Raider Theme](https://github.com/Memoryman2022/Dune-Raider/blob/main/sounds2/dune_raider.mp3)
 
-<span style="font-size:20px;">The palace has fallen! Arrakeen is in flames! Harkonnen and Sardaukar forces have swarmed Arakis and the Duke is in chains.</span>
+
 <span style="font-size:40px;">The palace has fallen! Arrakeen is in flames! Harkonnen and Sardaukar forces have swarmed Arakis and the Duke is in chains.</span>
 
 You must protect his heir Paul Artriedes and secure the future of his noble house.
@@ -21,6 +21,15 @@ The Raider is equiped with hover technology for fluid maneuverability and a fron
 <img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/ezgif.com-speed.gif" alt="Dune Raider Image" width="500" height="400">
 
 Use it to deliver the Duke Leto's son and Heir and his concubine, the Lady Jessica to the safty of the deserts of Dune.
+
+Paul Atreides
+
+<img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/Screenshot%202024-03-01%20at%2011.54.38.png" alt="Dune Raider Image" width="500" height="400">
+
+Lady Jessica
+
+<img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/Screenshot%202024-03-01%20at%2011.53.58.png" alt="Dune Raider Image" width="500" height="400">
+
 
 ENEMIES
 

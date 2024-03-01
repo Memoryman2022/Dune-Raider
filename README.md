@@ -41,6 +41,7 @@ ENEMIES
 
 On the way you will face Harkonnen and Sardaukar craft which include:-
 
+---
 
 <u>Harkonnen Spinner</u>
 
@@ -48,11 +49,15 @@ On the way you will face Harkonnen and Sardaukar craft which include:-
 
 The Spinner is an unmanned craft designed to explode on impact. Its self guided pilot mechanisim oscillates on a sine wave frequency. Easy to destroy but hard to hit.
 
+---
+
 <u>Sardaukar Cruiser</u>
 
 <img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/cruiser.gif" alt="Spinner Image" width="500" height="500">
 
 A lightning quick assault vessel designed fro rapier attacks. If you see one coming, evasion could be your best tactic.
+
+---
 
 <u>Harkonnen Ballship</u>
 

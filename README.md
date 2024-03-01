@@ -2,7 +2,7 @@
 
 [Dune Raider Theme](https://github.com/Memoryman2022/Dune-Raider/blob/main/sounds2/dune_raider.mp3)
 
-The palace has fallen! Arrakeen is in flames! Harkonnen and Sardaukar forces have swarmed Arakis and the Duke is in chains. 
+<span style="font-size:20px;">"The palace has fallen! Arrakeen is in flames! Harkonnen and Sardaukar forces have swarmed Arakis and the Duke is in chains.
 
 You must protect his heir Paul Artriedes and secure the future of his noble house.
 Take the Raider and deliver Paul and the lady Jessica to the safty of Stich T'bar deep in the desert where enemy forces can not follow.
@@ -10,7 +10,7 @@ You will have to fight your way through enemy ships hell bent on eliminating you
 
 May Shai-hulud keep you!
 
-Now GO!!!!!!
+Now GO!!!!!!</span>
 
 
 Dune Raider is a scrolling platform shooter. 
@@ -26,19 +26,19 @@ ENEMIES
 On the way you will face Harkonnen and Sardaukar craft which include:-
 
 
-Harkonnen Spinner
+<u>Harkonnen Spinner</u>
 
 <img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/spinner.gif" alt="Spinner Image" width="500" height="500">
 
 The Spinner is an unmanned craft designed to explode on impact. Its self guided pilot mechanisim oscillates on a sine wave frequency. Easy to destroy but hard to hit.
 
-Sardaukar Cruiser
+<u>Sardaukar Cruiser</u>
 
 <img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/cruiser.gif" alt="Spinner Image" width="500" height="500">
 
 A lightning quick assault vessel designed fro rapier attacks. If you see one coming, evasion could be your best tactic.
 
-Harkonnen Ballship
+<u>Harkonnen Ballship</u>
 
 <img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/ballship.gif" alt="Spinner Image" width="500" height="500">
 

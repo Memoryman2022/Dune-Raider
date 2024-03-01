@@ -12,16 +12,18 @@ You will have to fight your way through enemy ships hell bent on eliminating you
 May Shai-hulud keep you!
 
 Now GO!!!!!!</span>
-
+---
 
 Dune Raider is a scrolling platform shooter. 
+---
+
 
 The Raider is equiped with hover technology for fluid maneuverability and a front facing lazer cannon array
 
 <img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/ezgif.com-speed.gif" alt="Dune Raider Image" width="500" height="400">
 
 Use it to deliver the Duke Leto's son and Heir and his concubine, the Lady Jessica to the safty of the deserts of Dune.
-
+---
 Paul Atreides
 
 <img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/Screenshot%202024-03-01%20at%2011.54.38.png" alt="Dune Raider Image" width="390" height="400">
@@ -29,6 +31,8 @@ Paul Atreides
 Lady Jessica
 
 <img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/Screenshot%202024-03-01%20at%2011.53.58.png" alt="Dune Raider Image" width="390" height="400">
+---
+
 
 
 ENEMIES

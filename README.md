@@ -28,7 +28,7 @@ Use it to deliver the Duke Leto's son and Heir and his concubine, the Lady Jessi
 
 <table>
   <tr>
-    <td><img src="[URL_TO_YOUR_IMAGE" alt="alt text" style="width: 200px;"](https://github.com/Memoryman2022/Dune-Raider/blob/main/images/Screenshot%202024-03-01%20at%2011.54.38.png" alt="Dune Raider Image" width="390" height="400")/></td>
+    <td>/><img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/Screenshot%202024-03-01%20at%2011.54.38.png" alt="Dune Raider Image" width="390" height="400"></td>
     <td><u>Paul Atreides<u/></td>
   </tr>
 </table>

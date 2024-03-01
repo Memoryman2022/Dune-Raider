@@ -24,11 +24,11 @@ Use it to deliver the Duke Leto's son and Heir and his concubine, the Lady Jessi
 
 Paul Atreides
 
-<img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/Screenshot%202024-03-01%20at%2011.54.38.png" alt="Dune Raider Image" width="350" height="400">
+<img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/Screenshot%202024-03-01%20at%2011.54.38.png" alt="Dune Raider Image" width="370" height="400">
 
 Lady Jessica
 
-<img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/Screenshot%202024-03-01%20at%2011.53.58.png" alt="Dune Raider Image" width="350" height="400">
+<img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/Screenshot%202024-03-01%20at%2011.53.58.png" alt="Dune Raider Image" width="370" height="400">
 
 
 ENEMIES

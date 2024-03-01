@@ -69,5 +69,5 @@ A lightning quick assault vessel designed fro rapier attacks. If you see one com
 
 <img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/ballship.gif" alt="Spinner Image" width="500" height="500">
 
-Slower than the others but still formiddable especially on a highly populated battlefield. What the Ballship lacks in pace it makes up for in durability and requires heavy fire to eliminate.
+Slower than the others but still formidable especially on a highly populated battlefield. What the Ballship lacks in pace it makes up for in durability and requires heavy fire to eliminate.
 

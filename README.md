@@ -1,4 +1,4 @@
-<img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/title.png" alt="alt text" width="350" height="350">
+<p align="center"><img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/title.png" alt="alt text" width="550" height="550"></p>
 
 [Dune Raider Theme](https://github.com/Memoryman2022/Dune-Raider/blob/main/sounds2/dune_raider.mp3)
 

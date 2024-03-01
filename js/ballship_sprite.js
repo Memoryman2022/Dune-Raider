@@ -1,3 +1,6 @@
+let ballSound = new Audio("sounds2/ballship.wav");
+ballSound.volume = 0.2;
+
 import Enemy from "./enemy.js";
 export default class BallshipSprite extends Enemy {
   constructor(x, y, enemyProjectile, width, height, speed, health, frameRate) {
@@ -43,6 +46,7 @@ export default class BallshipSprite extends Enemy {
     this.currentFrame = 0;
     this.frameRate = frameRate;
     this.lastFrameUpdate = Date.now();
+    this.playSoundOnce = true;
   }
 
   // overwrighting the move from parent
@@ -70,6 +74,7 @@ export default class BallshipSprite extends Enemy {
   }
 
   draw(ctx, x, y, width, height) {
+    this.playSound();
     ctx.drawImage(
       this.frames[this.currentFrame],
       this.x,
@@ -77,5 +82,17 @@ export default class BallshipSprite extends Enemy {
       this.width,
       this.height
     );
+  }
+  playSound() {
+    if (this.playSoundOnce) {
+      ballSound.play();
+      this.playSoundOnce = false;
+    }
+  }
+  stopSound() {
+    if (!this.ballSound.paused) {
+      this.ballSound.pause();
+      this.ballSound.currentTime = 0;
+    }
   }
 }

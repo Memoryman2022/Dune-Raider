@@ -1,3 +1,6 @@
+let cruiseSound = new Audio("sounds2/player.wav");
+cruiseSound.volume = 0.5;
+
 import Enemy from "./enemy.js";
 export default class CruiserSprite extends Enemy {
   constructor(x, y, enemyProjectile, width, height, speed, health, frameRate) {
@@ -44,10 +47,11 @@ export default class CruiserSprite extends Enemy {
     this.currentFrame = 0;
     this.frameRate = frameRate;
     this.lastFrameUpdate = Date.now();
-    this.amplitude = 50;
-    this.angle = 0;
-    this.angleVelocity = 0.04;
+    this.amplitude = 90;
+    this.angle = 45;
+    this.angleVelocity = 0.05;
     this.initialY = randomY;
+    this.playSoundOnce = true;
   }
 
   // overwrighting the move from parent
@@ -77,6 +81,7 @@ export default class CruiserSprite extends Enemy {
   }
 
   draw(ctx) {
+    this.playSound();
     ctx.drawImage(
       this.frames[this.currentFrame],
       this.x,
@@ -84,5 +89,17 @@ export default class CruiserSprite extends Enemy {
       this.width,
       this.height
     );
+  }
+  playSound() {
+    if (this.playSoundOnce) {
+      cruiseSound.play();
+      this.playSoundOnce = false;
+    }
+  }
+  stopSound() {
+    if (!this.cruiseSound.paused) {
+      this.cruiseSound.pause();
+      this.cruiseSound.currentTime = 0;
+    }
   }
 }

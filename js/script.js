@@ -11,6 +11,9 @@ const ctx = canvas.getContext("2d");
 const gameEndScreen = document.getElementById("end-screen");
 const gameScreen = document.getElementById("game-screen");
 
+// sound
+const explode = new Audio("sounds/explode.wav");
+
 const projectileScheme = new ProjectilesScheme(canvas);
 const player = new Player(
   canvas.width / 2.8,
@@ -26,7 +29,7 @@ const ballshipSprite = new BallshipSprite(
   canvas.enemyProjectile,
   120,
   120,
-  1,
+  2,
   5,
   30
 );
@@ -39,9 +42,9 @@ const spinnerSprite = new SpinnerSprite(
   canvas.enemyProjectile,
   80,
   50,
-  4,
+  2,
   1,
-  80
+  60
 );
 
 // cruiser
@@ -52,8 +55,8 @@ const cruiserSprite = new CruiserSprite(
   canvas.enemyProjectile,
   150,
   100,
+  3,
   1,
-  4,
   30
 );
 
@@ -82,6 +85,11 @@ const EXPLOSION_FRAME_HEIGHT = 64;
 let hits = [];
 const HIT_FRAME_WIDTH = 32;
 const HIT_FRAME_HEIGHT = 32;
+
+function playExplode() {
+  const sound = explode.cloneNode();
+  sound.play();
+}
 
 function endScreen() {
   setTimeout(() => {
@@ -121,8 +129,8 @@ function gameLoop() {
           canvas.enemyProjectile,
           120,
           120,
-          1,
-          5,
+          2.5,
+          8,
           30
         );
         break;
@@ -133,7 +141,7 @@ function gameLoop() {
           canvas.enemyProjectile,
           80,
           50,
-          4,
+          3.5,
           1,
           80
         );
@@ -145,8 +153,8 @@ function gameLoop() {
           canvas.enemyProjectile,
           150,
           100,
-          1,
-          4,
+          4.2,
+          2,
           30
         );
         break;
@@ -223,6 +231,8 @@ function gameLoop() {
         )
       );
 
+      playExplode();
+
       enemyArray.splice(index, 1);
 
       setTimeout(() => {
@@ -263,7 +273,7 @@ function gameLoop() {
           "images/exp2_0.png"
         )
       );
-
+      playExplode();
       enemyArray.splice(index, 1);
 
       enemy.delete(ctx);

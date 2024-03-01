@@ -1,3 +1,6 @@
+let spinSound = new Audio("sounds/spinner.wav");
+spinSound.volume = 0.3;
+
 import Enemy from "./enemy.js";
 export default class SpinnerSprite extends Enemy {
   constructor(x, y, enemyProjectile, width, height, speed, health, frameRate) {
@@ -48,6 +51,7 @@ export default class SpinnerSprite extends Enemy {
     this.angle = 0;
     this.angleVelocity = 0.08;
     this.initialY = randomY;
+    this.playSoundOnce = true;
   }
 
   // overwrighting the move from parent
@@ -78,6 +82,19 @@ export default class SpinnerSprite extends Enemy {
   }
 
   draw(ctx, x, y, width, height) {
+    this.playSound();
     ctx.drawImage(this.frames[this.currentFrame], x, y, width, height);
+  }
+  playSound() {
+    if (this.playSoundOnce) {
+      spinSound.play();
+      this.playSoundOnce = false;
+    }
+  }
+  stopSound() {
+    if (!this.spinSound.paused) {
+      this.spinSound.pause();
+      this.spinSound.currentTime = 0;
+    }
   }
 }

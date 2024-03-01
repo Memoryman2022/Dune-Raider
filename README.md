@@ -29,12 +29,10 @@ Use it to deliver the Duke Leto's son and Heir and his concubine, the Lady Jessi
 <table>
   <tr>
     <td>/><img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/Screenshot%202024-03-01%20at%2011.54.38.png" alt="Dune Raider Image" width="390" height="400"></td>
-    <td><u>Paul Atreides<u/></td>
+    <td><u>Paul Atreides<u/>Paul Atreides (10176 AG - 10219 AG), predominantly known as Muad'Dib, was the first Kwisatz Haderach, the last Duke of House Atreides from 10191 AG until 10196 AG, the first and founding Padishah Emperor of the Atreides Empire from 10196 AG until 10210 AG, and the supreme religious leader of the Fremen as the accepted Mahdi from 10193 AG onwards. The only son of Duke Leto Atreides I and Lady Jessica Atreides (née Nerus), Paul's early years were overshadowed by suspicions of him as the Kwisatz Haderach.</td>
   </tr>
 </table>
-<u>Paul Atreides<u/>
 
-<img src="https://github.com/Memoryman2022/Dune-Raider/blob/main/images/Screenshot%202024-03-01%20at%2011.54.38.png" alt="Dune Raider Image" width="390" height="400">
 
 <u>Lady Jessica</u>
 

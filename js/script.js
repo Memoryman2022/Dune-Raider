@@ -13,7 +13,7 @@ const gameScreen = document.getElementById("game-screen");
 
 // sound
 const explode = new Audio("sounds/explode.wav");
-
+explode.volume = 0.2;
 const projectileScheme = new ProjectilesScheme(canvas);
 const player = new Player(
   canvas.width / 2.8,

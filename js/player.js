@@ -1,7 +1,7 @@
 let lazer = new Audio("sounds/laser2.wav");
-lazer.volume = 0.4;
+lazer.volume = 0.2;
 let hover = new Audio("sounds2/playerhover.wav");
-hover.volume = 0.6;
+hover.volume = 0.4;
 export default class Player {
   constructor(x, y, projectileScheme) {
     this.x = x;

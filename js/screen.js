@@ -27,7 +27,7 @@ window.onload = function () {
 };
 
 const backgroundMusic = new Audio("sounds2/dune_raider.mp3");
-backgroundMusic.volume = 0.2;
+backgroundMusic.volume = 0.4;
 backgroundMusic.loop = false;
 backgroundMusic.addEventListener("ended", function () {
   game.gameOver(true);
